@@ -26,7 +26,7 @@ nav {
   align-items: center;
   height: 72px;
   background: rgba(0, 0, 0, 0.286);
-  position: relative;
+
   margin: 30px;
   border-radius: 25px;
   padding: 0 40px;
@@ -38,6 +38,9 @@ nav ul {
   gap: 32px;
   list-style: none;
 }
+nav ul li {
+  cursor: pointer;
+}
 /*burgerMenu*/
 #burgerMenu {
   padding: 10px;
@@ -48,6 +51,35 @@ nav ul {
   display: none;
   cursor: pointer;
 }
+
+.navBurger {
+  z-index: 10;
+  height: 100vh;
+  position: relative;
+  padding: 60px;
+  position: absolute;
+  top: -30px;
+  right: -300px;
+  background: black;
+  display: none;
+}
+.active {
+  position: absolute;
+
+  right: 0;
+}
+.navBurger ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-bottom: 50px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+/*---------------------------*/
 .cta {
   display: flex;
   justify-content: center;
@@ -58,6 +90,10 @@ nav ul {
   padding: 8px 15px;
   cursor: pointer;
   min-width: 100px;
+  transition: 0.2s ease-in-out;
+}
+.cta:hover {
+  transform: scale(1.1);
 }
 .ctaContainer .cta {
   max-width: 190px;
@@ -445,4 +481,10 @@ footer ul li {
   .expertCta {
     display: none;
   }
+}
+
+/*profile part*/
+.profile h1 {
+  text-align: center;
+  padding: 50px 100px 100px;
 }

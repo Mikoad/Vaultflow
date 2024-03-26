@@ -1,5 +1,9 @@
 //burger menu
 const burgerMenu = document.getElementById("burgerMenu");
+const navBurger = document.querySelector(".navBurger");
+burgerMenu.addEventListener("click", () => {
+  navBurger.classList.toggle(".active");
+});
 //form
 const form = document.querySelector("form");
 const inputs = document.querySelectorAll(
@@ -99,7 +103,7 @@ inputs.forEach((input) => {
     }
   });
 });
-
+const profileInfos = document.querySelector(".profileInfos");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (pseudo && email && password && confirmPass) {
@@ -109,6 +113,7 @@ form.addEventListener("submit", (e) => {
       password,
     };
     console.log(data);
+
     inputs.forEach((input) => {
       input.value = "";
     });
@@ -118,9 +123,11 @@ form.addEventListener("submit", (e) => {
     password = null;
     confirmPass = null;
     alert("Inscription validée");
+    window.location.href = "profile.html";
   } else {
     alert("Veuillez remplir correctement les champs");
   }
+  // profileInfos.textContent = `Pseudo : ${data.pseudo}, Email : ${data.email}, Mot de passe : ${data.password}`;
 });
 // RegEx :
 // pseudo : /^[a-zA-Z0-9_\-.]*$/

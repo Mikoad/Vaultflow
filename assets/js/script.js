@@ -2,7 +2,8 @@
 const burgerMenu = document.getElementById("burgerMenu");
 const navBurger = document.querySelector(".navBurger");
 burgerMenu.addEventListener("click", () => {
-  navBurger.classList.toggle(".active");
+  navBurger.classList.toggle("active");
+  burgerMenu.classList.toggle("active");
 });
 //form
 const form = document.querySelector("form");

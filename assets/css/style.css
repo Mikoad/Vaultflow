@@ -51,22 +51,31 @@ nav ul li {
   display: none;
   cursor: pointer;
 }
-
+#burgerMenu.active {
+  right: 250px;
+}
 .navBurger {
   z-index: 10;
-  height: 100vh;
+  width: 250px;
+  height: 400px;
   position: relative;
-  padding: 60px;
+
   position: absolute;
   top: -30px;
-  right: -300px;
-  background: black;
+  right: -250px;
+  background: #0d0325;
+  border-bottom-left-radius: 20px;
+  border: 1px solid white;
   display: none;
+  transition: 0.5s ease-in-out;
 }
-.active {
-  position: absolute;
-
+.navBurger.active {
+  display: block;
   right: 0;
+}
+.navBurger .cta {
+  width: 200px;
+  margin: 0 auto;
 }
 .navBurger ul {
   list-style: none;
@@ -74,10 +83,20 @@ nav ul li {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 50px;
+
   margin-bottom: 50px;
   font-size: 2rem;
   font-weight: 700;
+}
+
+.navBurger ul li {
+  padding: 20px 20px;
+  text-align: center;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+}
+.navBurger ul li:hover {
+  color: #d71dac;
 }
 /*---------------------------*/
 .cta {
@@ -265,6 +284,10 @@ a {
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 50px;
+}
+.fullWidthService p {
+  font-size: 14px;
+  line-height: 150%;
 }
 
 /*contact form*/
@@ -457,6 +480,12 @@ footer ul li {
   #nav .cta {
     display: none;
   }
+  #nav {
+    background: none;
+  }
+  .logo {
+    margin: 0;
+  }
   #burgerMenu {
     display: block;
   }
@@ -472,6 +501,32 @@ footer ul li {
   }
   .aboutUs {
     display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 130%;
+  }
+  .imgPresentation img {
+    height: 200px;
+  }
+  .expertCta {
+    display: none;
+  }
+  .service {
+    height: auto;
+    padding: 50px;
+  }
+  .service img {
+    display: none;
+  }
+  .service h3 {
+    font-size: 1.8rem;
+  }
+  .fullWidthService h3 {
+    font-size: 1.8rem;
+    line-height: 120%;
   }
 }
 @media screen and (max-width: 700px) {
